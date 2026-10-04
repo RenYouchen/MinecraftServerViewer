@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 20) {
+            Text("Hello, World!")
+                .font(.largeTitle)
+                .foregroundColor(.blue)
+
+            Text("Minecraft Server Viewer")
+                .font(.subheadline)
+                .foregroundColor(.gray)
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }
