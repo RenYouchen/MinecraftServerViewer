@@ -6,8 +6,37 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7CC6A50C2F9D2B7400DB8EAA /* ServerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7CC6A5012F9D2B7400DB8EAA /* ServerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CC6A50D2F9D2B7400DB8EAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CC6A4462F9D2B7400DB8EAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CC6A5042F9D2B7400DB8EAA;
+			remoteInfo = ServerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CC6A50B2F9D2B7400DB8EAA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7CC6A50C2F9D2B7400DB8EAA /* ServerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7CC6A44E2F9D2B7400DB8EAA /* MinecraftServerViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinecraftServerViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CC6A5012F9D2B7400DB8EAA /* ServerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ServerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +45,27 @@
 			path = MinecraftServerViewer;
 			sourceTree = "<group>";
 		};
+		7CC6A5032F9D2B7400DB8EAA /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7CC6A5022F9D2B7400DB8EAA /* ServerWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ServerWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7CC6A44B2F9D2B7400DB8EAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CC6A5062F9D2B7400DB8EAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				7CC6A4502F9D2B7400DB8EAA /* MinecraftServerViewer */,
+				7CC6A5032F9D2B7400DB8EAA /* Shared */,
+				7CC6A5022F9D2B7400DB8EAA /* ServerWidget */,
 				7CC6A44F2F9D2B7400DB8EAA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC6A44E2F9D2B7400DB8EAA /* MinecraftServerViewer.app */,
+				7CC6A5012F9D2B7400DB8EAA /* ServerWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,13 +104,16 @@
 				7CC6A44A2F9D2B7400DB8EAA /* Sources */,
 				7CC6A44B2F9D2B7400DB8EAA /* Frameworks */,
 				7CC6A44C2F9D2B7400DB8EAA /* Resources */,
+				7CC6A50B2F9D2B7400DB8EAA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7CC6A50E2F9D2B7400DB8EAA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				7CC6A4502F9D2B7400DB8EAA /* MinecraftServerViewer */,
+				7CC6A5032F9D2B7400DB8EAA /* Shared */,
 			);
 			name = MinecraftServerViewer;
 			packageProductDependencies = (
@@ -69,6 +121,29 @@
 			productName = MinecraftServerViewer;
 			productReference = 7CC6A44E2F9D2B7400DB8EAA /* MinecraftServerViewer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7CC6A5042F9D2B7400DB8EAA /* ServerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CC6A5082F9D2B7400DB8EAA /* Build configuration list for PBXNativeTarget "ServerWidgetExtension" */;
+			buildPhases = (
+				7CC6A5052F9D2B7400DB8EAA /* Sources */,
+				7CC6A5062F9D2B7400DB8EAA /* Frameworks */,
+				7CC6A5072F9D2B7400DB8EAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7CC6A5022F9D2B7400DB8EAA /* ServerWidget */,
+				7CC6A5032F9D2B7400DB8EAA /* Shared */,
+			);
+			name = ServerWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = ServerWidgetExtension;
+			productReference = 7CC6A5012F9D2B7400DB8EAA /* ServerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -78,10 +153,13 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					7CC6A44D2F9D2B7400DB8EAA = {
 						CreatedOnToolsVersion = 26.2;
+					};
+					7CC6A5042F9D2B7400DB8EAA = {
+						CreatedOnToolsVersion = 27.0;
 					};
 				};
 			};
@@ -100,12 +178,20 @@
 			projectRoot = "";
 			targets = (
 				7CC6A44D2F9D2B7400DB8EAA /* MinecraftServerViewer */,
+				7CC6A5042F9D2B7400DB8EAA /* ServerWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7CC6A44C2F9D2B7400DB8EAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CC6A5072F9D2B7400DB8EAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +208,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CC6A5052F9D2B7400DB8EAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CC6A50E2F9D2B7400DB8EAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CC6A5042F9D2B7400DB8EAA /* ServerWidgetExtension */;
+			targetProxy = 7CC6A50D2F9D2B7400DB8EAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7CC6A4572F9D2B7600DB8EAA /* Debug */ = {
@@ -159,6 +260,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 2C4X8AL22P;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -184,6 +286,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -223,6 +326,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2C4X8AL22P;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -241,6 +345,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -250,12 +355,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/MinecraftServerViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2C4X8AL22P;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -282,12 +390,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Config/MinecraftServerViewer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2C4X8AL22P;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,6 +411,72 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.renyouchen.MinecraftServerViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7CC6A5092F9D2B7400DB8EAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ServerWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 2C4X8AL22P;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/ServerWidget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "伺服器狀態";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renyouchen.MinecraftServerViewer.ServerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7CC6A50A2F9D2B7400DB8EAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/ServerWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 2C4X8AL22P;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/ServerWidget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "伺服器狀態";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renyouchen.MinecraftServerViewer.ServerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -326,6 +503,15 @@
 			buildConfigurations = (
 				7CC6A45A2F9D2B7600DB8EAA /* Debug */,
 				7CC6A45B2F9D2B7600DB8EAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CC6A5082F9D2B7400DB8EAA /* Build configuration list for PBXNativeTarget "ServerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CC6A5092F9D2B7400DB8EAA /* Debug */,
+				7CC6A50A2F9D2B7400DB8EAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

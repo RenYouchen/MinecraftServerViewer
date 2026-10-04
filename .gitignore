@@ -1,0 +1,13 @@
+# Build output (scripts/run.sh)
+build/
+DerivedData/
+
+# Per-user Xcode state
+xcuserdata/
+*.xcuserstate
+
+# Local Claude Code settings and worktrees
+.claude/
+
+# macOS
+.DS_Store
