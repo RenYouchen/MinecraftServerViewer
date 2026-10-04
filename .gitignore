@@ -11,3 +11,7 @@ xcuserdata/
 
 # macOS
 .DS_Store
+
+# Editor rules and design exports kept locally
+.cursor/
+*.html

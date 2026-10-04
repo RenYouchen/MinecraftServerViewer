@@ -27,6 +27,16 @@ App 直接實作 Minecraft 的狀態查詢協定（不依賴任何第三方 API�
   - 還原預設伺服器清單
 - **小工具**：小、中、大三種尺寸，附重新整理按鈕；小尺寸可選擇要顯示的伺服器
 
+## 安裝
+
+到 [Releases](https://github.com/RenYouchen/MinecraftServerViewer/releases) 下載最新的 `MinecraftServerViewer-*.zip`，解壓縮後把 `MinecraftServerViewer.app` 拖進「應用程式」資料夾。
+
+這個版本使用開發者憑證簽署、沒有經過 Apple 公證（notarization），所以第一次開啟時 macOS 會擋下來。請用以下任一方式開啟：
+
+- 在 Finder 中對 App 按右鍵 › 「打開」，再按一次「打開」
+- 或到「系統設定 › 隱私權與安全性」，在下方按「強制打開」
+- 或在終端機執行：`xattr -dr com.apple.quarantine /Applications/MinecraftServerViewer.app`
+
 ## 系統需求
 
 - macOS 26.2 以上
@@ -105,5 +115,4 @@ scripts/
 
 ## 備註
 
-- `Minecraft Server Viewer.html`：UI 設計稿（主視窗淺色／深色、新增伺服器表單、元件規格），用瀏覽器開啟即可檢視。
 - 本專案與 Mojang Studios 或 Microsoft 無關。Minecraft 是 Mojang Synergies AB 的商標。
