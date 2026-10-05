@@ -144,6 +144,9 @@ class Player {
 - [ ] Add server icons/avatars
 - [ ] Improve error messages in UI
 - [ ] Implement loading states
+- [ ] Server categories: group servers in the sidebar (e.g. survival, minigames)
+- [ ] Widget server selection: let medium/large widgets choose which servers to show (small widget already picks one via `SelectServerIntent`)
+- [ ] Widget category filter: let widgets filter servers by category (depends on server categories)
 
 ### Low Priority
 - [ ] Dark mode support
