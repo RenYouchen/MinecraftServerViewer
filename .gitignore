@@ -15,3 +15,6 @@ xcuserdata/
 # Editor rules and design exports kept locally
 .cursor/
 *.html
+
+# Packaged builds
+*.dmg
