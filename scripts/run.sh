@@ -20,8 +20,11 @@ for arg in "$@"; do
 done
 
 app_name=MinecraftServerViewer
+# Debug builds are named "MinecraftServerViewer (Debug)" (PRODUCT_NAME in the project).
+product_name=$app_name
+[[ $configuration == Debug ]] && product_name="$app_name (Debug)"
 derived_data=build
-app="$derived_data/Build/Products/$configuration/$app_name.app"
+app="$derived_data/Build/Products/$configuration/$product_name.app"
 
 echo "▸ Building $configuration…"
 xcodebuild -project "$app_name.xcodeproj" \
@@ -37,15 +40,18 @@ touch "$app"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$app"
 
 # Quit a running copy so the new build is the one that opens.
-if pgrep -xq "$app_name"; then
+# pgrep takes a regex, so escape the parentheses in "(Debug)".
+process_pattern=${product_name//\(/\\(}
+process_pattern=${process_pattern//\)/\\)}
+if pgrep -xq "$process_pattern"; then
     echo "▸ Quitting running app…"
-    osascript -e "quit app \"$app_name\"" || true
-    while pgrep -xq "$app_name"; do /bin/sleep 0.2; done
+    osascript -e "quit app \"$product_name\"" || true
+    while pgrep -xq "$process_pattern"; do /bin/sleep 0.2; done
 fi
 
 if $logs; then
     echo "▸ Running in foreground (Ctrl+C to quit)…"
-    exec "$app/Contents/MacOS/$app_name"
+    exec "$app/Contents/MacOS/$product_name"
 else
     echo "▸ Launching $app"
     open "$app"
