@@ -109,6 +109,8 @@ Signing is required (App Group shared with the widget). Team ID `2C4X8AL22P` app
 - [ ] Server categories: group servers in the sidebar (e.g. survival, minigames)
 - [ ] Widget server selection: let medium/large widgets choose which servers to show (small widget already picks one via `SelectServerIntent`)
 - [ ] Widget category filter: let widgets filter servers by category (depends on server categories)
+- [ ] Local server detection: find Minecraft servers running on this Mac (e.g. probe localhost on the default Java/Bedrock ports)
+- [ ] LAN discovery: scan the local network for servers on other hosts (Java LAN worlds announce via multicast 224.0.2.60:4445; Bedrock answers RakNet Unconnected Ping broadcast on 19132)
 - [ ] Server statistics beyond latency (uptime)
 - [ ] Server ranking system
 
