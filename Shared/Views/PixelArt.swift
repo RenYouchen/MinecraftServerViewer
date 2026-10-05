@@ -6,29 +6,57 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 /// Draws a row-major 8×8 grid of colors.
+///
+/// Rendered as a bitmap `Image` rather than a `Canvas` so widgets can keep it in
+/// full color when the desktop is in the background (accented rendering mode
+/// would otherwise flatten it to a white square).
 struct PixelGrid: View {
     let pixels: [Color]
     var size: CGFloat
     var cornerRadius: CGFloat = 4
 
     var body: some View {
-        Canvas { context, canvasSize in
-            let cell = canvasSize.width / 8
-            for (index, color) in pixels.enumerated() {
-                let rect = CGRect(
-                    x: CGFloat(index % 8) * cell,
-                    y: CGFloat(index / 8) * cell,
-                    width: cell + 0.5,
-                    height: cell + 0.5
-                )
-                context.fill(Path(rect), with: .color(color))
+        Group {
+            if let bitmap = Self.bitmap(from: pixels) {
+                Image(decorative: bitmap, scale: 1)
+                    .resizable()
+                    .interpolation(.none)
+                    .widgetAccentedRenderingMode(.fullColor)
+            } else {
+                Color.clear
             }
         }
         .frame(width: size, height: size)
         .clipShape(.rect(cornerRadius: cornerRadius))
         .accessibilityHidden(true)
+    }
+
+    private static func bitmap(from pixels: [Color]) -> CGImage? {
+        guard pixels.count == 64 else { return nil }
+        let environment = EnvironmentValues()
+        let bytes = pixels.flatMap { color -> [UInt8] in
+            let resolved = color.resolve(in: environment)
+            return [resolved.red, resolved.green, resolved.blue, resolved.opacity]
+                .map { UInt8((min(max($0, 0), 1) * 255).rounded()) }
+        }
+        guard let provider = CGDataProvider(data: Data(bytes) as CFData),
+              let sRGB = CGColorSpace(name: CGColorSpace.sRGB) else { return nil }
+        return CGImage(
+            width: 8,
+            height: 8,
+            bitsPerComponent: 8,
+            bitsPerPixel: 32,
+            bytesPerRow: 8 * 4,
+            space: sRGB,
+            bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue),
+            provider: provider,
+            decode: nil,
+            shouldInterpolate: false,
+            intent: .defaultIntent
+        )
     }
 }
 
@@ -43,6 +71,7 @@ struct ServerIcon: View {
                 Image(nsImage: image)
                     .resizable()
                     .interpolation(.none) // keep the 64×64 pixel art crisp
+                    .widgetAccentedRenderingMode(.fullColor)
                     .frame(width: size, height: size)
                     .clipShape(.rect(cornerRadius: cornerRadius))
                     .accessibilityHidden(true)
